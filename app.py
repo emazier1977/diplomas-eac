@@ -16,7 +16,12 @@ import base64
 # =========================
 # 🔧 CONFIG GLOBAL EXCEL
 # =========================
-RUTA_EXCEL = r"C:\Sistema de Diplomas EAC\alumnos.xlsx"
+import platform
+
+if platform.system() == "Windows":
+    RUTA_EXCEL = r"C:\Sistema de Diplomas EAC\alumnos.xlsx"
+else:
+    RUTA_EXCEL = "alumnos.xlsx"
 
 import ssl
 import certifi
