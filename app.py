@@ -258,12 +258,6 @@ def leer_excel_local():
         # 🔍 Leer Excel
         df = pd.read_excel(RUTA_EXCEL)
 
-        # 🔍 DEBUG (esto es clave ahora)
-        st.write("📊 Filas leídas:", len(df))
-        st.write("📋 Columnas detectadas:", df.columns.tolist())
-        st.write("👀 Vista previa:")
-        st.dataframe(df.head())
-
         return df
 
     except Exception as e:
