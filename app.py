@@ -232,6 +232,8 @@ FRASES = {
 # =========================
 def leer_excel_local():
     try:
+        st.write("📂 Buscando archivo en:", RUTA_EXCEL)
+
         if not os.path.exists(RUTA_EXCEL):
             st.warning("⚠️ Archivo Excel no existe, creando base inicial...")
 
@@ -248,7 +250,14 @@ def leer_excel_local():
             df_base.to_excel(RUTA_EXCEL, index=False)
             return df_base
 
+        # 🔍 Leer Excel
         df = pd.read_excel(RUTA_EXCEL)
+
+        # 🔍 DEBUG (esto es clave ahora)
+        st.write("📊 Filas leídas:", len(df))
+        st.write("📋 Columnas detectadas:", df.columns.tolist())
+        st.write("👀 Vista previa:")
+        st.dataframe(df.head())
 
         return df
 
